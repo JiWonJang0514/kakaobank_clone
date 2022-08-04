@@ -221,3 +221,104 @@
     padding: 1rem 5.5rem;
 }
 /* Content 3 End */
+
+
+/* Content 4 Start */
+#content4 {
+    padding: 120px 0;
+}
+
+#content4 .content-img {
+    height: 400px;
+}
+
+#week-btn {
+    padding: 1rem 5.5rem;
+}
+/* Content 4 End */
+
+
+/* Content 5 Start */
+#content5 {
+    border: none;
+    background: url("../imgs/home_map.png");
+    background-position: -120px;
+    background-repeat: no-repeat;
+}
+
+#foreign-btn {
+    padding: 1rem 5.5rem;
+}
+/* Content 5 End */
+
+
+/* Time Section Start */
+#time-section {
+    padding-top: 160px;
+    background-color: #569cdb;
+    font-family: 'yoon-reqular';
+}
+
+.time-section-inner {
+}
+
+.time-section-inner > div {
+    display: flex;
+    justify-content: center;
+}
+
+.time-text {
+    text-align: center;
+}
+
+.time-text > h2 {
+    color: #fff;
+    font-family: 'yoon-bold';
+    font-size: 40px;
+}
+
+.time-text > p {
+    margin: 30px 0;
+    font-size: 15px;
+    line-height: 1.6rem;
+    color: #fff;
+    opacity: 0.6;
+}
+
+.time-btn {
+    margin: 1px;
+    padding: 1rem 0.8rem;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,0.1);
+    font-size: 16px;
+}
+
+.time-btn > a {
+    color: #fff;
+}
+
+.time-btn > .arrow-ico {
+    padding-left: 2px;
+    height: 9px;
+    object-fit: cover;
+    position: relative;
+    top: -1px;
+}
+
+#sinyong-btn {
+    padding: 1rem 2.8rem;
+}
+
+.time-img {
+    margin-top: 35px;
+    width: auto;
+    height: 550px;
+}
+
+.time-img > img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+}
+/* Time Section End */
