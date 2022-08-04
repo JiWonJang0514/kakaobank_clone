@@ -16,9 +16,10 @@
     height: 80px;
     border-bottom: 1px solid #eee;
     background-color: #fff;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 
 .header-inner {
@@ -63,7 +64,7 @@
 
 /* Visual Start */
 #visual {
-    margin-bottom: 150px;
+    margin: 80px 0 150px 0;
     width: 100%;
     height: 720px;
     background-color: #ffef6b;
@@ -118,7 +119,7 @@
 }
 
 .visual-store .google-play-ico {
-    /* todo: 아이콘 어떻게 써야할지 */
+    /* todo: 아이콘 리소스를 어떻게 써야할지 */
     /* padding: 20px;
     background: url("../imgs/ico_sns.png");
     background-position: 0px; */
@@ -150,7 +151,7 @@
 
 .content-img {
     width: auto;
-    height: 680px;
+    height: 700px;
 }
 
 .content-img > img {
@@ -166,17 +167,19 @@
 
 .content-text > p {
     margin: 30px 0;
-    line-height: 1.8rem;
+    line-height: 1.6rem;
     color: #444;
 }
 
 .content-btn {
+    margin-left: 2px;
     padding: 1rem 2.5rem;
     border: 1px solid #f6f6f6;
     border-radius: 12px;
     background-color: #f6f6f6;
     font-size: 16px;
 }
+
 .content-btn > .arrow-ico {
     padding-left: 2px;
     height: 9px;
@@ -185,3 +188,36 @@
     top: -1px;
 }
 /* Content End */
+
+
+/* Content 2 Start */
+#content2 .content-text {
+    margin-right: -120px;
+}
+
+#content2 .content-img {
+    margin-right: -80px;
+}
+
+#save-banner {
+    margin-top: 50px;
+    width: 440px;
+}
+
+#save-banner > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* Content 2 End */
+
+
+/* Content 3 Start */
+#content3 .content-img {
+    height: 600px;
+}
+
+#moin-btn {
+    padding: 1rem 5.5rem;
+}
+/* Content 3 End */
