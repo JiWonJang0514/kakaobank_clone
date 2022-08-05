@@ -26,3 +26,7 @@ a:hover {
     margin: auto;
     width: 1080px;
 }
+
+.ico {
+    background-image: url("../imgs/img_kabang_210628.png");
+}
