@@ -91,7 +91,7 @@
 }
 
 .visual-text > p {
-    margin: 30px 0;
+    margin: 20px 0;
     line-height: 1.8rem;
     color: #444;
 }
@@ -160,12 +160,12 @@
     object-fit: cover;
 }
 
-.content-text > h2 {
+.content-title > h2 {
     font-family: 'yoon-bold';
     font-size: 40px;
 }
 
-.content-text > p {
+.content-title > p {
     margin: 30px 0;
     line-height: 1.6rem;
     color: #444;
@@ -191,7 +191,7 @@
 
 
 /* Content 2 Start */
-#content2 .content-text {
+#content2 .content-title {
     margin-right: -120px;
 }
 
@@ -267,17 +267,17 @@
     justify-content: center;
 }
 
-.time-text {
+.time-title {
     text-align: center;
 }
 
-.time-text > h2 {
+.time-title > h2 {
     color: #fff;
     font-family: 'yoon-bold';
     font-size: 40px;
 }
 
-.time-text > p {
+.time-title > p {
     margin: 30px 0;
     font-size: 15px;
     line-height: 1.6rem;
@@ -322,3 +322,118 @@
     object-fit: cover;
 }
 /* Time Section End */
+
+
+/* Checkcard Section Start */
+#checkcard-section {
+    padding: 160px 0;
+    font-family: 'yoon-reqular';
+}
+
+.checkcard-section-inner > div {
+    display: flex;
+    justify-content: center;
+}
+
+.checkcard-title {
+    text-align: center;
+}
+
+.checkcard-title > h2 {
+    font-family: 'yoon-bold';
+    font-size: 40px;
+}
+
+.checkcard-title > p {
+    margin: 30px 0;
+    font-size: 15px;
+    line-height: 1.6rem;
+    color: #555;
+}
+
+.checkcard-btn {
+    margin: 1px;
+    padding: 1rem 1.3rem;
+    border: 1px solid #f6f6f6;
+    border-radius: 12px;
+    background-color: #f6f6f6;
+    font-size: 16px;
+}
+
+.checkcard-btn > .arrow-ico {
+    padding-left: 2px;
+    height: 9px;
+    object-fit: cover;
+    position: relative;
+    top: -1px;
+}
+
+#checkcard-img-box {
+    margin-top: 80px;
+}
+/* Checkcard Section End */
+
+
+/* Tech Section Start */
+#tech-section {
+    padding: 160px 0;
+    font-family: 'yoon-reqular';
+    background-color: #f9f9f9;
+}
+
+.tech-section-inner > div {
+    display: flex;
+    justify-content: center;
+}
+
+.tech-title {
+    margin-bottom: 140px;
+    text-align: center;
+}
+
+.tech-title > h2 {
+    font-family: 'yoon-bold';
+    font-size: 40px;
+}
+
+.tech-title > #tech-underline {
+    margin: 50px auto 0 auto;
+    width: 100px;
+    height: 2px;
+    background-color: #000;
+}
+
+.tech-img {
+    width: 1020px;
+    height: auto;
+}
+
+.tech-img > img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.tech-text-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tech-text-left {
+    display: flex;
+}
+
+.tech-text {
+    text-align: center;
+}
+
+.tech-text > h3 {
+    font-family: 'yoon-bold';
+}
+
+.tech-text > p {
+    margin-top: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    color: #777;
+}
+/* Tech Section End */
