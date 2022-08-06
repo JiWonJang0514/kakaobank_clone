@@ -470,7 +470,7 @@
     height: 1px;
     background-color: #eee;
     position: relative;
-    top: -275px;
+    top: -325px;
     z-index: 1;
 }
 /* Tech Section End */
@@ -481,10 +481,109 @@
     width: 100%;
     background-color: #eee;
     font-family: 'yoon-reqular';
-    font-size: 13px;
 }
 
 .footer-inner {
+    padding: 1.5rem 0;
+}
 
+.footer-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-menu-item {
+    line-height: 25px;
+}
+
+.footer-menu-item > a {
+    font-size: 12px;
+    color: #444;
+}
+
+.footer-menu-item b {
+    font-family: 'yoon-bold';
+    color: #000;
+}
+
+.footer-menu-item > span {
+    padding: 0 1rem;
+    font-size: 11px;
+    color: #ccc;
+}
+
+.footer-info {
+    margin: 1rem 0;
+    font-size: 13px;
+    line-height: 25px;
+    color: #888;
+}
+
+.footer-info > span {
+    font-family: 'yoon-bold';
+    color: #000;
+}
+
+.footer-info > b {
+    font-size: 11px;
+    font-family: 'yoon-bold';
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom > div {
+    display: flex;
+}
+
+.footer-webacc {
+    align-items: center;
+}
+
+.footer-webacc-img {
+    width: auto;
+    height: 32px;
+}
+
+.footer-webacc-img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.footer-webacc > span {
+    margin-left: 10px;
+    font-size: 13px;
+    font-family: 'yoon-bold';
+    font-weight: bold;
+    color: #666;
+}
+
+.footer-icons .ico {
+    width: 28px;
+    height: 28px;
+    background-image: url('../imgs/ico_sns.png');
+}
+
+.facebook {
+    background-position: 0px -89px;
+}
+
+.instagram {
+    margin-right: 10px;
+    background-position: -190px -137px;
+}
+
+.youtube {
+    margin-right: 10px;
+    background-position: -89px -89px;
+}
+
+.brunch {
+    margin-right: 20px;
+    background-position: -217px -137px;
 }
 /* Footer End */
