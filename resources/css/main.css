@@ -276,7 +276,11 @@
     left: 0;
 }
 
-.time-section-inner > div {
+.time-section-inner > .container {
+    position: relative;
+}
+
+.time-section-inner > .container > div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -350,8 +354,9 @@
     width: 110px;
     height: 110px;
     position: absolute;
-    top: 200px;
-    right: 120px;
+    top: 50px;
+    right: -20px;
+    overflow: hidden;
 }
 
 #moon {
@@ -371,6 +376,51 @@
     top: -100%;
     left: -100%;
     opacity: 0;
+}
+
+.star {
+    padding: 2px;
+    height: 0;
+    border-radius: 100%;
+    background-color: #fff;
+    position: absolute;
+    opacity: 0;
+}
+
+#star1 {
+    width: 0;
+    top: 90px;
+    left: 20%;
+}
+#star2 {
+    width: 0;
+    top: 250px;
+    left: 15%;
+}
+#star3 {
+    width: 0;
+    top: 300px;
+    left: 10%;
+}
+#star4 {
+    width: 0;
+    top: 625px;
+    left: 23%;
+}
+#star5 {
+    width: 0;
+    top: 380px;
+    right: 15%;
+}
+#star6 {
+    width: 0;
+    top: 410px;
+    right: 30%;
+}
+#star7 {
+    width: 0;
+    top: 710px;
+    right: 26%;
 }
 /* Time Section End */
 
