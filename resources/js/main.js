@@ -1,7 +1,8 @@
 window.onload = () => {
     addEvent();
-    // #333b58
 };
+
+let isNight = false;
 
 // 셀렉터
 function q(selector) {
@@ -17,30 +18,48 @@ function qa(selector) {
 function addEvent() {
     window.addEventListener('scroll', () => {
         setTimeout(() => {
-            console.log(window.scrollY);
+            // console.log(window.scrollY);
+            if(window.scrollY < 4020 && isNight) {
+                changeDayAni();
+                isNight = false;
+
+            } else if(!isNight) {
+                changeNightAni();
+                isNight = true;
+            }
         }, 0);
     });
-    q('#sky-btn').onclick = changeSkyAni;
 }
 
-// 하늘 애니메이션
-function changeSkyAni() {
-    qa('.star').forEach(e => {
-        showStar(e);
-    });
-    growNight().onfinish = () => {
-        twinkleStar(q('#star1'), 2000);
-        twinkleStar(q('#star2'), 0);
-        twinkleStar(q('#star3'), 1000);
-        twinkleStar(q('#star4'), 4000);
-        twinkleStar(q('#star5'), 3000);
-        twinkleStar(q('#star6'), 1000);
-        twinkleStar(q('#star7'), 0);
-    }
-    changeSunToMoon();
-    setTimeout(() => {
-        coverMoon();
-    }, 300);
+// 낮하늘로 복구
+function changeDayAni() {
+    q('#night').style.top = '100%';
+    q('#moon').style.backgroundColor = '#ffdc00';
+    q('#moon-cover').style.opacity = '0';
+    q('#moon-cover').style.top = '-100%';
+    q('#moon-cover').style.left = '-100%';
+}
+
+// 밤하늘 애니메이션
+function changeNightAni() {
+    // setTimeout(() => {
+        qa('.star').forEach(e => {
+            showStar(e);
+        });
+        growNight().onfinish = () => {
+            twinkleStar(q('#star1'), 2000);
+            twinkleStar(q('#star2'), 0);
+            twinkleStar(q('#star3'), 1000);
+            twinkleStar(q('#star4'), 4000);
+            twinkleStar(q('#star5'), 3000);
+            twinkleStar(q('#star6'), 1000);
+            twinkleStar(q('#star7'), 0);
+        }
+        changeSunToMoon();
+        setTimeout(() => {
+            coverMoon();
+        }, 300);
+    // }, 2000);
 }
 
 // 별 보이기
