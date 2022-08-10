@@ -3,6 +3,7 @@ window.onload = () => {
 };
 
 let hasContent2Ani = false;
+let hasContent5Ani = false;
 let isNight = false;
 
 // 셀렉터
@@ -26,6 +27,12 @@ function addEvent() {
                 hasContent2Ani = true;
             }
 
+            // content 2
+            if(window.scrollY > 3372 && !hasContent5Ani) {
+                slideContent5();
+                hasContent5Ani = true;
+            }
+
             // time section
             if(window.scrollY < 4020 && isNight) {
                 changeDayAni();
@@ -46,6 +53,25 @@ function slideContent2() {
     const slideAni = [
         { opacity: '0', left: '14%' },
         { opacity: '1', left: '0%' }
+    ];
+    img.animate(
+        slideAni,
+        {
+            duration: 800,
+            iterations: 1,
+            easing: 'ease-in-out',
+            fill: 'forwards'
+        }
+    );
+}
+
+// 해외계좌 이미지 애니
+function slideContent5() {
+    // 이미지 옆으로 쓕 슬라이드
+    let img = q('#foreign-img');
+    const slideAni = [
+        { opacity: '0', top: '25%' },
+        { opacity: '1', top: '0%' }
     ];
     img.animate(
         slideAni,

@@ -266,6 +266,19 @@
     background-repeat: no-repeat;
 }
 
+#foreign-img-box {
+    width: 399px;
+    position: relative;
+    overflow: hidden;
+}
+
+#foreign-img {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    opacity: 0;
+}
+
 #foreign-btn {
     padding: 1rem 5.5rem;
 }
@@ -489,10 +502,43 @@
 #checkcard-img-box {
     margin-top: 80px;
     position: relative;
+    display: flex;
 }
 
-.checkcard-img {
+#checkcard-slider {
+    padding-right: 100px;
+    width: 660px;
+    height: 440px;
+    position: relative;
+    left: 4.5%;
+    overflow: hidden;
 
+    border: 1px solid;
+}
+
+.checkcard-img:nth-child(1) {
+    width: 240px;
+    position: absolute;
+    top: 7%;
+    left: 0;
+}
+.checkcard-img:nth-child(2) {
+    width: 280px;
+    position: absolute;
+    top: 0;
+    left: 22%;
+    z-index: 3;
+}
+.checkcard-img:nth-child(3) {
+    width: 240px;
+    position: absolute;
+    top: 7%;
+    left: 50%;
+}
+
+.checkcard-img > img {
+    width: 100%;
+    object-fit: cover;
 }
 
 .checkcard-control {
