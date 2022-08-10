@@ -516,20 +516,20 @@
     border: 1px solid;
 }
 
-.checkcard-img:nth-child(1) {
+.checkcard-img.left {
     width: 240px;
     position: absolute;
     top: 7%;
     left: 0;
 }
-.checkcard-img:nth-child(2) {
+.checkcard-img.center {
     width: 280px;
     position: absolute;
     top: 0;
     left: 22%;
     z-index: 3;
 }
-.checkcard-img:nth-child(3) {
+.checkcard-img.right {
     width: 240px;
     position: absolute;
     top: 7%;
@@ -557,12 +557,12 @@
     background-image: url('../imgs/img_kabang_210628.png');
 }
 
-.checkcard-control .left {
+.checkcard-control > .prev {
     background-position: -325px 5px;
     transform: scale(1.1) rotateY(180deg);
 }
 
-.checkcard-control .right {
+.checkcard-control > .next {
     background-position: -325px 5px;
     transform: scale(1.1);
 }

@@ -6,6 +6,15 @@ let hasContent2Ani = false;
 let hasContent5Ani = false;
 let isNight = false;
 
+let checkcardList = [
+    'resources/imgs/card-1.png', 
+    'resources/imgs/card-2.png', 
+    'resources/imgs/card-3.png', 
+    'resources/imgs/card-4.png', 
+    'resources/imgs/card-5.png'
+];
+let currentIdx = 2;
+
 // 셀렉터
 function q(selector) {
     return document.querySelector(selector);
@@ -20,7 +29,6 @@ function qa(selector) {
 function addEvent() {
     window.addEventListener('scroll', () => {
         setTimeout(() => {
-            console.log(window.scrollY);
             // content 2
             if(window.scrollY > 1100 && !hasContent2Ani) {
                 slideContent2();
@@ -44,6 +52,11 @@ function addEvent() {
             }
         }, 0);
     });
+
+    // checkcard slider
+    console.log(q('.checkcard-control > .prev'));
+    q('.checkcard-control > .prev').onclick = slidePrev;
+    q('.checkcard-control > .next').onclick = slideNext;
 }
 
 // 적금 이미지 애니
@@ -203,4 +216,34 @@ function twinkleStar(star, timing) {
             delay: timing
         }
     );
+}
+
+// 체크카드 왼쪽 클릭
+function slidePrev() {
+    // todo: 흠.. 슬라이드는 되는데 애니메이션은?? ㅇㅅㅇ
+    //       내용만 바꾸는게 아니라 카드 자체가 자리를 옆으로 움직여져야 함
+    let left = null;
+    let center = null;
+    let right = null;
+
+    if(currentIdx == 0) {
+        currentIdx = checkcardList.length - 1;
+        left = currentIdx - 1;
+        center = currentIdx;
+        right = 0;
+    } else {
+        currentIdx--;
+        left = currentIdx == 0 ? checkcardList.length - 1 : currentIdx - 1;
+        center = currentIdx;
+        right = currentIdx + 1;
+    }
+
+    q('.checkcard-img.left > img').src = checkcardList[left];
+    q('.checkcard-img.center > img').src = checkcardList[center];
+    q('.checkcard-img.right > img').src = checkcardList[right];
+}
+
+// 체크카드 오른쪽 클릭
+function slideNext() {
+    
 }
