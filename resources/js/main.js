@@ -2,6 +2,7 @@ window.onload = () => {
     addEvent();
 };
 
+let hasContent2Ani = false;
 let isNight = false;
 
 // 셀렉터
@@ -18,7 +19,14 @@ function qa(selector) {
 function addEvent() {
     window.addEventListener('scroll', () => {
         setTimeout(() => {
-            // console.log(window.scrollY);
+            console.log(window.scrollY);
+            // content 2
+            if(window.scrollY > 1100 && !hasContent2Ani) {
+                slideContent2();
+                hasContent2Ani = true;
+            }
+
+            // time section
             if(window.scrollY < 4020 && isNight) {
                 changeDayAni();
                 isNight = false;
@@ -29,6 +37,25 @@ function addEvent() {
             }
         }, 0);
     });
+}
+
+// 적금 이미지 애니
+function slideContent2() {
+    // 이미지 옆으로 쓕 슬라이드
+    let img = q('#save-img');
+    const slideAni = [
+        { opacity: '0', left: '14%' },
+        { opacity: '1', left: '0%' }
+    ];
+    img.animate(
+        slideAni,
+        {
+            duration: 800,
+            iterations: 1,
+            easing: 'ease-in-out',
+            fill: 'forwards'
+        }
+    );
 }
 
 // 낮하늘로 복구
@@ -42,24 +69,22 @@ function changeDayAni() {
 
 // 밤하늘 애니메이션
 function changeNightAni() {
-    // setTimeout(() => {
-        qa('.star').forEach(e => {
-            showStar(e);
-        });
-        growNight().onfinish = () => {
-            twinkleStar(q('#star1'), 2000);
-            twinkleStar(q('#star2'), 0);
-            twinkleStar(q('#star3'), 1000);
-            twinkleStar(q('#star4'), 4000);
-            twinkleStar(q('#star5'), 3000);
-            twinkleStar(q('#star6'), 1000);
-            twinkleStar(q('#star7'), 0);
-        }
-        changeSunToMoon();
-        setTimeout(() => {
-            coverMoon();
-        }, 300);
-    // }, 2000);
+    qa('.star').forEach(e => {
+        showStar(e);
+    });
+    growNight().onfinish = () => {
+        twinkleStar(q('#star1'), 2000);
+        twinkleStar(q('#star2'), 0);
+        twinkleStar(q('#star3'), 1000);
+        twinkleStar(q('#star4'), 4000);
+        twinkleStar(q('#star5'), 3000);
+        twinkleStar(q('#star6'), 1000);
+        twinkleStar(q('#star7'), 0);
+    }
+    changeSunToMoon();
+    setTimeout(() => {
+        coverMoon();
+    }, 300);
 }
 
 // 별 보이기
