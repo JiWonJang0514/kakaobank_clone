@@ -1,10 +1,12 @@
 window.onload = () => {
     addEvent();
+    setCards();
 };
 
 let hasContent2Ani = false;
 let hasContent5Ani = false;
 let isNight = false;
+let currentCards = [2, 3, 4];
 
 let checkcardList = [
     'resources/imgs/card-1.png', 
@@ -14,6 +16,8 @@ let checkcardList = [
     'resources/imgs/card-5.png'
 ];
 let currentIdx = 2;
+
+
 
 // 셀렉터
 function q(selector) {
@@ -218,30 +222,93 @@ function twinkleStar(star, timing) {
     );
 }
 
+// 카드 초기화
+function setCards() {
+    q(`.checkcard-img[data-num='${currentCards[0]}']`).style.left = '0px';
+    q(`.checkcard-img[data-num='${currentCards[0]}']`).style.transform = 'translateZ(0px)';
+
+    q(`.checkcard-img[data-num='${currentCards[1]}']`).style.left = '168px';
+    q(`.checkcard-img[data-num='${currentCards[1]}']`).style.transform = 'translateZ(125px)';
+    // q(`.checkcard-img[data-num='${currentCards[1]}']`).style.zIndex = '2';
+    
+    q(`.checkcard-img[data-num='${currentCards[2]}']`).style.left = 'calc(100% - 240px - 85px)';
+    q(`.checkcard-img[data-num='${currentCards[2]}']`).style.transform = 'translateZ(0px)';
+}
+
 // 체크카드 왼쪽 클릭
 function slidePrev() {
-    // todo: 흠.. 슬라이드는 되는데 애니메이션은?? ㅇㅅㅇ
-    //       내용만 바꾸는게 아니라 카드 자체가 자리를 옆으로 움직여져야 함
-    let left = null;
-    let center = null;
-    let right = null;
+    // [0]을 왼쪽으로 이동
+    const leftAni = [
+        { left: '0px' },
+        { left: '168px', transform: 'translateZ(125px)' },
+        // { left: '168px', transform: 'translateZ(125px)', zIndex: '2' },
+    ];
+    q(`.checkcard-img[data-num='${currentCards[0]}']`).animate(
+        leftAni,
+        {
+            duration: 800,
+            iterations: 1,
+            easing: 'ease',
+            fill: 'forwards'
+        }
+    );
 
-    if(currentIdx == 0) {
-        currentIdx = checkcardList.length - 1;
-        left = currentIdx - 1;
-        center = currentIdx;
-        right = 0;
-    } else {
-        currentIdx--;
-        left = currentIdx == 0 ? checkcardList.length - 1 : currentIdx - 1;
-        center = currentIdx;
-        right = currentIdx + 1;
-    }
+    // [1]을 센터로 이동 + tranlateZ
+    const centerAni = [
+        { left: '168px' },
+        { left: 'calc(100% - 240px - 85px)', transform: 'translateZ(0px)' },
+        // { left: 'calc(100% - 240px - 85px)', transform: 'translateZ(0px)', zIndex: '1' },
+    ];
+    q(`.checkcard-img[data-num='${currentCards[1]}']`).animate(
+        centerAni,
+        {
+            duration: 800,
+            iterations: 1,
+            easing: 'ease',
+            fill: 'forwards'
+        }
+    );
 
-    q('.checkcard-img.left > img').src = checkcardList[left];
-    q('.checkcard-img.center > img').src = checkcardList[center];
-    q('.checkcard-img.right > img').src = checkcardList[right];
+    // [2]을 오른쪽으로 이동
+    const rightAni = [
+        { left: 'calc(100% - 240px - 85px)' },
+        { left: '100%', transform: 'translateZ(0px)' },
+        // { left: '100%', transform: 'translateZ(0px)', zIndex: '1' },
+    ];
+    q(`.checkcard-img[data-num='${currentCards[2]}']`).animate(
+        rightAni,
+        {
+            duration: 800,
+            iterations: 1,
+            easing: 'ease',
+            fill: 'forwards'
+        }
+    );
 }
+
+// function slidePrev2() {
+//     // todo: 흠.. 슬라이드는 되는데 애니메이션은?? ㅇㅅㅇ
+//     //       내용만 바꾸는게 아니라 카드 자체가 자리를 옆으로 움직여져야 함
+//     let left = null;
+//     let center = null;
+//     let right = null;
+
+//     if(currentIdx == 0) {
+//         currentIdx = checkcardList.length - 1;
+//         left = currentIdx - 1;
+//         center = currentIdx;
+//         right = 0;
+//     } else {
+//         currentIdx--;
+//         left = currentIdx == 0 ? checkcardList.length - 1 : currentIdx - 1;
+//         center = currentIdx;
+//         right = currentIdx + 1;
+//     }
+
+//     q('.checkcard-img.left > img').src = checkcardList[left];
+//     q('.checkcard-img.center > img').src = checkcardList[center];
+//     q('.checkcard-img.right > img').src = checkcardList[right];
+// }
 
 // 체크카드 오른쪽 클릭
 function slideNext() {

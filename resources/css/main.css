@@ -512,28 +512,18 @@
     position: relative;
     left: 4.5%;
     overflow: hidden;
-
+    perspective: 1000px;
+    transform-style: preserve-3d;
     border: 1px solid;
 }
 
-.checkcard-img.left {
+.checkcard-img {
     width: 240px;
+    height: 100%;
     position: absolute;
     top: 7%;
-    left: 0;
-}
-.checkcard-img.center {
-    width: 280px;
-    position: absolute;
-    top: 0;
-    left: 22%;
-    z-index: 3;
-}
-.checkcard-img.right {
-    width: 240px;
-    position: absolute;
-    top: 7%;
-    left: 50%;
+    left: 100%;
+    transform: translateZ(0px);
 }
 
 .checkcard-img > img {
