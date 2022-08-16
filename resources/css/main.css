@@ -502,7 +502,14 @@
 #checkcard-img-box {
     margin-top: 80px;
     position: relative;
-    display: flex;
+}
+
+#checkcard-view {
+    margin-left: 96px;
+    width: 660px;
+    height: 440px;
+    border: 1px solid;
+    overflow: hidden;
 }
 
 #checkcard-slider {
@@ -510,11 +517,11 @@
     width: 660px;
     height: 440px;
     position: relative;
-    left: 4.5%;
-    overflow: hidden;
+    /* left: 4.5%; */
+    /* overflow: hidden; */
+    /* todo: preserve-3d가 오버플로우가 있으면 동작하지 않음 */
     perspective: 1000px;
     transform-style: preserve-3d;
-    border: 1px solid;
 }
 
 .checkcard-img {
