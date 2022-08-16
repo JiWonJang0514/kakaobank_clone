@@ -509,7 +509,7 @@
     width: 660px;
     height: 440px;
     border: 1px solid;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #checkcard-slider {
@@ -529,7 +529,7 @@
     height: 100%;
     position: absolute;
     top: 7%;
-    left: 100%;
+    left: -240px;
     transform: translateZ(0px);
 }
 
