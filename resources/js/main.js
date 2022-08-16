@@ -8,15 +8,6 @@ let hasContent5Ani = false;
 let isNight = false;
 let currentCards = [2, 3, 4];
 
-let checkcardList = [
-    'resources/imgs/card-1.png', 
-    'resources/imgs/card-2.png', 
-    'resources/imgs/card-3.png', 
-    'resources/imgs/card-4.png', 
-    'resources/imgs/card-5.png'
-];
-let currentIdx = 2;
-
 
 
 // 셀렉터
@@ -39,7 +30,7 @@ function addEvent() {
                 hasContent2Ani = true;
             }
 
-            // content 2
+            // content 5
             if(window.scrollY > 3372 && !hasContent5Ani) {
                 slideContent5();
                 hasContent5Ani = true;
@@ -240,7 +231,8 @@ function animateCard(ani, cardData) {
     q(`.checkcard-img[data-num='${cardData}']`).animate(
         ani,
         {
-            duration: 800,
+            // duration: 800, 느린 버전
+            duration: 300,
             iterations: 1,
             easing: 'ease',
             fill: 'forwards'
