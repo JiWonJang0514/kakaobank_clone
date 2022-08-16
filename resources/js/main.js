@@ -58,9 +58,10 @@ function addEvent() {
     });
 
     // checkcard slider
-    console.log(q('.checkcard-control > .prev'));
     q('.checkcard-control > .prev').onclick = slidePrev;
     q('.checkcard-control > .next').onclick = slideNext;
+
+    // todo: 양쪽 카드 클릭하면 슬라이드 되야함
 }
 
 // 적금 이미지 애니
