@@ -545,6 +545,7 @@
     position: absolute;
     top: 39%;
     left: 0;
+    z-index: -1;
 }
 
 .checkcard-control .ico {
