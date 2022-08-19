@@ -506,9 +506,8 @@
 
 #checkcard-view {
     margin-left: 96px;
-    width: 660px;
+    width: 655px;
     height: 440px;
-    /* border: 1px solid; */
     overflow: hidden;
 }
 
@@ -517,11 +516,10 @@
     width: 660px;
     height: 440px;
     position: relative;
-    /* left: 4.5%; */
-    /* overflow: hidden; */
-    /* todo: preserve-3d가 오버플로우가 있으면 동작하지 않음. 기술적 문제. */
     perspective: 1000px;
     transform-style: preserve-3d;
+    /* overflow: hidden; */
+    /* todo: preserve-3d가 오버플로우가 있으면 동작하지 않음. 기술적 문제. */
 }
 
 .checkcard-img {

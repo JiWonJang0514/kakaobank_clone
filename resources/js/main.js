@@ -224,6 +224,9 @@ function setCards() {
     
     q(`.checkcard-img[data-num='${currentCards[2]}']`).style.left = 'calc(100% - 240px - 85px)';
     q(`.checkcard-img[data-num='${currentCards[2]}']`).style.transform = 'translateZ(0px)';
+
+    // 카드 클릭이벤트
+    addCardClickEvent();
 }
 
 // 카드 애니메이션
@@ -231,7 +234,6 @@ function animateCard(ani, cardData) {
     q(`.checkcard-img[data-num='${cardData}']`).animate(
         ani,
         {
-            // duration: 800, 느린 버전
             duration: 300,
             iterations: 1,
             easing: 'ease',
@@ -274,6 +276,9 @@ function slidePrev() {
     currentCards[2] = currentCards[1];
     currentCards[1] = currentCards[0];
     currentCards[0] = currentCards[0] > 1 ? currentCards[0] - 1 : 5;
+
+    // 카드 클릭이벤트
+    addCardClickEvent();
 }
 
 // 체크카드 오른쪽 클릭
@@ -310,4 +315,14 @@ function slideNext() {
     currentCards[0] = currentCards[1];
     currentCards[1] = currentCards[2];
     currentCards[2] = currentCards[2] < 5 ? currentCards[2] + 1 : 1;
+
+    // 카드 클릭이벤트
+    addCardClickEvent();
+}
+
+// 좌우 카드 클릭이벤트
+function addCardClickEvent() {
+    // todo: 중간카드가 겹친 부분 클릭해도 이벤트 동작함
+    q(`.checkcard-img[data-num='${currentCards[0]}']`).onclick = slideNext;
+    q(`.checkcard-img[data-num='${currentCards[2]}']`).onclick = slidePrev;
 }
