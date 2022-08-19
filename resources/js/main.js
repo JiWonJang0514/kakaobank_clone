@@ -322,15 +322,21 @@ function slideNext() {
 
 // 좌우 카드 클릭이벤트
 function addCardClickEvent() {
+    // todo: 가운데 카드 이벤트 삭제하려고 할 때
+
+    // 원래의 코드!
+    // q(`.checkcard-img[data-num='${currentCards[0]}']`).onclick = slidePrev;
+    // q(`.checkcard-img[data-num='${currentCards[2]}']`).onclick = slideNext;
+
+    // 일단 해결한 코드
     q(`.checkcard-img[data-num='${currentCards[0]}']`).onclick = slidePrev;
     q(`.checkcard-img[data-num='${currentCards[1]}']`).onclick = null;
     q(`.checkcard-img[data-num='${currentCards[2]}']`).onclick = slideNext;
 
-    // todo: 가운데 카드 이벤트 삭제하려고 할 때
-    //       addEventListener를 썼더니 slidePrev, slideNext에서 실행된 currentCards갱신이 무효되는 것 같음
-    //       하지만 가운데 클릭 시 슬라이드 안되게는 거는 동작함
-    //       onclick과 addEventListener('click'은 뭐가 다른거지??
-    
+    //  onclick->addEventListener로 바꾸고 난 후의 문제점 발견!!
+    //  addEventListener를 썼더니 slidePrev, slideNext에서 실행된 currentCards갱신이 무효되는 것 같음
+    //  하지만 가운데 클릭 시 슬라이드 안되게 하는 거는 동작함
+    //  onclick과 addEventListener('click'은 뭐가 다른지 모르겠다! 기술적 문제.
     // q(`.checkcard-img[data-num='${currentCards[0]}']`).addEventListener('click', slidePrev);
     // q(`.checkcard-img[data-num='${currentCards[1]}']`).removeEventListener('click', slidePrev);
     // q(`.checkcard-img[data-num='${currentCards[1]}']`).removeEventListener('click', slideNext);
