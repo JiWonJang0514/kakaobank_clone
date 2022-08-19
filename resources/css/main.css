@@ -537,31 +537,26 @@
     object-fit: cover;
 }
 
-.checkcard-control {
-    padding: 0 35px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    top: 39%;
-    left: 0;
-    z-index: -1;
-}
-
-.checkcard-control .ico {
+#checkcard-img-box .ico {
     width: 40px;
     height: 70px;
     background-image: url('../imgs/img_kabang_210628.png');
 }
 
-.checkcard-control > .prev {
+.checkcard-prev {
     background-position: -325px 5px;
     transform: scale(1.1) rotateY(180deg);
+    position: absolute;
+    top: 39%;
+    left: 0;
 }
 
-.checkcard-control > .next {
+.checkcard-next {
     background-position: -325px 5px;
     transform: scale(1.1);
+    position: absolute;
+    top: 39%;
+    left: 95%;
 }
 /* Checkcard Section End */
 

@@ -49,8 +49,8 @@ function addEvent() {
     });
 
     // checkcard slider
-    q('.checkcard-control > .prev').onclick = slidePrev;
-    q('.checkcard-control > .next').onclick = slideNext;
+    q('.checkcard-prev').addEventListener('click', slidePrev);
+    q('.checkcard-next').addEventListener('click', slideNext);
 
     // todo: 양쪽 카드 클릭하면 슬라이드 되야함
 }
@@ -322,7 +322,17 @@ function slideNext() {
 
 // 좌우 카드 클릭이벤트
 function addCardClickEvent() {
-    // todo: 중간카드가 겹친 부분 클릭해도 이벤트 동작함
-    q(`.checkcard-img[data-num='${currentCards[0]}']`).onclick = slideNext;
-    q(`.checkcard-img[data-num='${currentCards[2]}']`).onclick = slidePrev;
+    q(`.checkcard-img[data-num='${currentCards[0]}']`).onclick = slidePrev;
+    q(`.checkcard-img[data-num='${currentCards[1]}']`).onclick = null;
+    q(`.checkcard-img[data-num='${currentCards[2]}']`).onclick = slideNext;
+
+    // todo: 가운데 카드 이벤트 삭제하려고 할 때
+    //       addEventListener를 썼더니 slidePrev, slideNext에서 실행된 currentCards갱신이 무효되는 것 같음
+    //       하지만 가운데 클릭 시 슬라이드 안되게는 거는 동작함
+    //       onclick과 addEventListener('click'은 뭐가 다른거지??
+    
+    // q(`.checkcard-img[data-num='${currentCards[0]}']`).addEventListener('click', slidePrev);
+    // q(`.checkcard-img[data-num='${currentCards[1]}']`).removeEventListener('click', slidePrev);
+    // q(`.checkcard-img[data-num='${currentCards[1]}']`).removeEventListener('click', slideNext);
+    // q(`.checkcard-img[data-num='${currentCards[2]}']`).addEventListener('click', slideNext);
 }
